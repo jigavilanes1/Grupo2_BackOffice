@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; 
+  }
+  
+  .login-container {
+    position: absolute;
+    top: 53%;
+    left: 52.5%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px; 
+    display: flex;
+    align-items: center;
+  }
+
+  .login-container img{
+    width: 42.5%;
+  }
+
+  .espacio{
+    margin-right:10%;
+  }
+  
+  .logo-container {
+    text-align: left;
+    margin-top: 2%;
+    margin-left: 5%;
+  }
+  
+  p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #136962;
+    padding: 5px;
+  }
+  
+  label{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #136962;
+  }
+  
+  input{
+    font-size: 15px;
+    margin-bottom: 60px;
+    padding: 10px;
+  }
+  
+  .logo-container img {
+    width: 15%; 
+    height: auto;
+  }
+  
+  .title {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #136962;
+  }
+  
+  .bank-image {
+    width: 90%;
+    height: auto;
+    border-radius: 5px; 
+  }
+  
+  .form-container {
+    width: 35%;
+  }
+  
+  .form-container input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-color: #d3d3d3;
+    border-radius: 10px;
+  }
+  
+  .login-button {
+    
+    margin-top: 15px;
+    width: 100%;
+    padding: 12.5px;
+    background-color: #1DAB9F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    font-size: 15px; 
+  }
+  
+  .login-button:hover {
+    background: linear-gradient(to top, #14ccbd, #18b5a8);
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 15px;
+  }
+  
+  .forgot-password {
+    text-align: center;
+    color: #21cebd; 
+    margin-top: 2.5px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .forgot-password:hover {
+    color: #16d8cf; 
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .register-link a {
+    color: #21cebd; 
+    text-decoration: none; 
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline; 
+  }
+  
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to top, #16b9ab, #1DAB9F);
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+  }
+  
