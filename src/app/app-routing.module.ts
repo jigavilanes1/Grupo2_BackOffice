@@ -13,6 +13,7 @@ import { CreditosComponent } from './creditos/creditos.component';
 import { CuentasComponent } from './cuentas/cuentas.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
+import { TransaccionCanceladaComponent } from './transaccion-cancelada/transaccion-cancelada.component';
 
 const routes: Routes = [
   
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'nuevaCuenta', component: NuevaCuentaComponent},
   { path: 'nuevoCredito', component: NuevoCreditoComponent},
   { path: 'registrarse', component: RegistrarseComponent},
-  { path: 'creditos', component: CreditosComponent}
+  { path: 'creditos', component: CreditosComponent},
+  { path: 'transaccionCancelada', component: TransaccionCanceladaComponent}
 ];
 
 @NgModule({

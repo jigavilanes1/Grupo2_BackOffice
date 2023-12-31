@@ -1,0 +1,195 @@
+.primer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 12% 88%;
+    height: 100%;
+  }
+  
+  .header {
+    background: linear-gradient(to top, #16b9ab, #1DAB9F);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    width: 10.5%;
+    height: 92%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 55%;
+    height: 100%;
+  }
+  
+  .nombre {
+    display: contents;
+    align-items: center;
+    cursor: default;
+  }
+  
+  .nombre p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 33px;
+    color: #ffffff;
+    cursor: default;
+    padding-right: 400px;
+  }
+  
+  .usuario-info {
+    display: flex;
+    align-items: center;
+    cursor: default;
+  }
+  
+  .usuario-info img {
+    width: 20%;
+    border-radius: 50%;
+  }
+  
+  .usuario-info p {
+    font-size: 20px;
+    padding-right: 15px;
+    color: #ffffff;
+  }
+  
+  
+  .columna-gris {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .buttons-container h3 {
+    font-family: 'Times New Roman', serif;
+    font-size: 40px;
+    text-align: left;
+    color: #000000d3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.386);
+    margin-top: 25px;
+    margin-left: 75px;
+    font-weight: lighter;
+    cursor: default;
+  }
+
+  .buttons-container {
+    display: flex;
+    margin-top: 10px;
+    padding-left: 10px;
+
+  }
+  
+  .buttons-container {
+    text-align: center;
+  }
+
+    .filter-section {
+        margin-top: 10px;
+        margin-left: 50px;
+}
+  
+      .filter-label ,.filter-label-direc{
+        margin-right: 30px;
+        margin-left: 60px;
+        text-align: center;
+        align-self: flex-end;
+      }
+  
+      .filter-section select{
+      border-radius: 20px;
+      margin-top: 10px;
+      align-self: flex-end;
+      padding: 5px;
+      width: 200px;
+      }
+
+    .filter-section input{
+        border-radius: 20px;
+        margin-top: 10px;
+        padding: 5px;
+        width: 300px;
+        align-self: flex-end;
+        }
+
+    .filterdirec input{
+        border-radius: 20px;
+        margin-right: 30px;
+        margin-top: 10px;
+        padding: 5px;
+        width: 600px;
+        align-self: flex-end;
+        }
+
+  .button-container {
+    display: flex;
+    margin-top: 1%;
+  }
+
+  .button {
+    width: 150px;
+    height:40px;
+    border-radius: 10px;
+    background: linear-gradient(to top, #27376F, #190f31);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-left: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .datos-personales {
+    background: linear-gradient(to top, #18948a, #1f847b);
+    font-size: 20px;
+    color: #fff;
+    align-self: center;
+    width: 90%;
+    padding: 15px;
+    padding-left: 50px;
+}
+
+  .button:hover {
+    background: linear-gradient(to top, #273d8b, #231249);
+  }
+
+
+.grupo-input input {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 12.5px;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    margin-right: 40px;
+    align-self: flex-end;
+}
+
+
+.grupo-input label {
+    padding: 17.5px;
+    width: 250px;
+    margin-top: 5px;
+    text-align: right;
+    align-self: flex-start;
+}
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to top, #16b9ab, #1DAB9F);
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+  }

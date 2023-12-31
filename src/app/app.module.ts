@@ -15,7 +15,7 @@ import { CreditosComponent } from './creditos/creditos.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
-
+import { TransaccionCanceladaComponent } from './transaccion-cancelada/transaccion-cancelada.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
     CuentasComponent,
     NuevaCuentaComponent,
     NuevoCreditoComponent,
-    RegistrarseComponent
+    RegistrarseComponent,
+    TransaccionCanceladaComponent
   ],
   imports: [
     BrowserModule,
