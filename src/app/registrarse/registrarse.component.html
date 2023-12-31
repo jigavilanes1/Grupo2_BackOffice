@@ -1,1 +1,43 @@
-<p>registrarse works!</p>
+<body>
+    <div id="formulario">
+        <img src="../../assets/img/logo sin letras.png" alt="Imagen de perfil"> <!-- Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen de perfil -->
+        <h3>Registrarse</h3>
+        <p>Tipo identificación:</p>
+        <div id="tipo-identificacion">
+            <div class="opcion-identificacion">
+                <input type="radio" name="identificacion" value="cedula"> Cédula
+            </div>
+            <div class="opcion-identificacion">
+                <input type="radio" name="identificacion" value="pasaporte"> Pasaporte
+            </div>
+            <div class="opcion-identificacion">
+                <input type="radio" name="identificacion" value="ruc"> RUC
+            </div>
+        </div>
+        <div class="grupo-input">
+            <label for="numero-identificacion">Número Identificación:</label>
+            <input type="text" id="numero-identificacion" name="numero-identificacion">
+        </div>
+        <div class="grupo-input">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div class="grupo-input">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario">
+        </div>
+        <div class="grupo-input">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena">
+        </div>
+        <div class="grupo-input">
+            <label for="validar-contrasena">Validar Contraseña:</label>
+            <input type="password" id="validar-contrasena" name="validar-contrasena">
+        </div>
+        <button id="boton-registrar" type="button" routerLink="/loginBO">Registrarse</button>
+    </div>
+    <footer>
+        © 2023 BancoBanquito. Todos los derechos reservados.
+    </footer>
+    </body>
+    
