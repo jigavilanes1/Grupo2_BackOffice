@@ -1,1 +1,89 @@
-<p>cuentas works!</p>
+<div class="primer-grid">
+    <div class="header">
+        <div class="logo">
+            <img src="../../../assets/img/logo sin letras.png" alt="Usuario">
+        </div>
+        <div class="nombre">
+            <p>Banco BanQuito</p>
+        </div>
+        <div class="usuario-info">
+            <p>Nombre de Usuario </p>
+            <img src="../../../assets/img/Img persona.png" alt="Usuario">
+        </div>
+    </div>
+    <div class="segundo-grid">
+        <div class="columna-celeste">
+            <div class="espaciado"></div>
+            <div class="clientes" routerLink="/clientes">
+                <img src="../../assets/img/bo/cliente.png" alt="Tarjeta">
+                <p>Clientes</p>
+            </div>
+            <div class="espaciado"></div>
+            <div class="credito" routerLink="/creditos">
+                <img src="../../assets/img/bo/credito.png" alt="Sin Tarjeta">
+                <p>Credito</p>
+            </div>
+            <div class="salir" routerLink="/">
+                <img src="../../assets/img/bo/cerrar-sesion.png" alt="Sin Tarjeta">
+                <p>Salir</p>
+            </div>
+        </div>
+        <div class="columna-gris">
+            <div class="buttons-container">
+                <h3>Agregar Cuentas</h3>
+                <div class="circle-button-mas">
+                  <img src="../../assets/img/bo/añadir.png" alt="Icono 1">
+                </div>
+                <div class="circle-button-rec">
+                  <img src="../../assets/img/bo/recargar.png" alt="Icono 2">
+                </div>
+                <div class="circle-button-edi">
+                  <img src="../../assets/img/bo/editar.png" alt="Icono 3">
+                </div>
+              </div>
+              <hr>
+              <div class="container">
+                <div class="filter-section">
+                    <label for="nombre" class="filter-label">Nombre:</label>
+                    <input type="text" id="num-identificacion" placeholder=" Buscar..">  
+                  <label for="num-identificacion" class="filter-label">N° de Identificación:</label>
+                  <input type="text" id="num-identificacion" placeholder=" Buscar..">
+                </div>
+            
+                <div class="table-container">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>N°</th>
+                        <th>Tipo Identificación</th>
+                        <th>N° Identificación</th>
+                        <th>Razón Social</th>
+                        <th>Correo Electronico</th>
+                        <th>Teléfono</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Cedula</td>
+                            <td>1725664874</td>
+                            <td>Juan Antonio Navarrete</td>
+                            <td>jnavarrete gmail.com</td>
+                            <td>0943195904</td>
+                            <td>
+                                <div class="button">Desactivar</div>
+                          </td>
+                            </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+</div>
+<footer>
+    © 2023 BancoBanquito. Todos los derechos reservados.
+</footer>

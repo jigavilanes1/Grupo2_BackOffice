@@ -289,14 +289,14 @@
 
     .filter-section select , .filter-section input{
     border-radius: 20px;
-    margin-right: 10px;
+    margin-right: 40px;
     padding: 5px;
     }
 
     th, td {
       border: 1px solid #ddd;
       padding: 8px;
-      text-align: left;
+      text-align: center;
     }
 
     th {
@@ -307,21 +307,6 @@
     display: flex;
     margin-top: 1%;
   
-  }
-  .button {
-    width: 200px;
-    height: 60px;
-    border-radius: 40px;
-    background: linear-gradient(to top, #16b9ab, #1DAB9F);
-    color: #fff;
-    margin-right: 50px;
-    margin-left: 50px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 20px;
   }
   
   footer {

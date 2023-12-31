@@ -321,6 +321,16 @@
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
   }
+
+  .button {
+    background: linear-gradient(to top, #18c4b6, #12c7b8);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+  }
   
   footer {
     text-align: center;
