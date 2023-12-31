@@ -140,7 +140,7 @@
     flex-direction: column;
   }
   
-  .columna-gris h3 {
+  .buttons-container h3 {
     font-family: 'Times New Roman', serif;
     font-size: 40px;
     text-align: left;
@@ -151,32 +151,175 @@
     font-weight: lighter;
     cursor: default;
   }
+
+  .buttons-container {
+    display: flex;
+    margin-top: 10px;
+    padding-left: 10px;
+
+  }
   
+  .buttons-container {
+    text-align: center;
+  }
+
+  .container {
+      max-width: 95%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+
+    
+  .circle-button-mas {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    margin: 20px; 
+    
+    margin-right: 10px;
+    margin-left: 50px;
+    background-color: #5567A7;
+    border: 2px solid #000;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle-button-rec {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    margin: 20px; 
+    
+    margin-right: 10px;
+    background-color: #45B049;
+    border: 2px solid #000;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle-button-edi {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    margin: 20px; 
+    margin-right: 10px;
+    background-color: #F8E64A;
+    border: 2px solid #000;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle-button-eli {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    margin: 20px; 
+    margin-right: 10px;
+    background-color: #AA3A3A;
+    border: 2px solid #000;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
+  .circle-button-mas img, .circle-button-rec img, .circle-button-edi img, .circle-button-eli img,.circle-button-buscar img{
+    max-width: 25px;
+    max-height: 25px;
+  }
+
+  .circle-button-buscar img:hover, .circle-button-mas img:hover, .circle-button-rec img:hover, .circle-button-edi img:hover, .circle-button-eli img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .circle-button-buscar{
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    margin: 20px; 
+    background-color: #5567A7;
+    border: 2px solid #000;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+    hr {
+      border: 1px solid #000000;
+      width: 65%;
+      margin-right: 45%;
+    }
+
+    .filter-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .filter-section p{
+      display: flex;
+      font-weight: bold;
+      align-items: center;
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+
+    .filter-label {
+      margin-right: 10px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .filter-section select , .filter-section input{
+    border-radius: 20px;
+    margin-right: 10px;
+    padding: 5px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #1DAB9F;
+      color: #fff;
+    }
   .button-container {
     display: flex;
     margin-top: 1%;
   
   }
-  
   .button {
-    width: 200px;
-    height: 60px;
+    width: 150px;
+    height: 30px;
     border-radius: 40px;
-    background: linear-gradient(to top, #16b9ab, #1DAB9F);
+    background: linear-gradient(to top, #1aafa3, #17beb1);
     color: #fff;
-    margin-right: 50px;
-    margin-left: 50px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
-  }
-  
-  .button:hover {
-    background: linear-gradient(to top, #12cdbe, #19c0b2);
   }
   
   footer {

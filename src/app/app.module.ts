@@ -11,6 +11,7 @@ import { ClienteJuridicoComponent } from './cliente-juridico/cliente-juridico.co
 import { ClienteNaturalComponent } from './cliente-natural/cliente-natural.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { CuentasComponent } from './cuentas/cuentas.component';
+import { CreditosComponent } from './creditos/creditos.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
@@ -23,6 +24,7 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
     LoginBoComponent,
     ClienteJuridicoComponent,
     ClienteNaturalComponent,
+    CreditosComponent,
     ClientesComponent,
     CuentasComponent,
     NuevaCuentaComponent,
