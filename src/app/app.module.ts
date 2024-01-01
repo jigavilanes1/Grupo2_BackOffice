@@ -16,6 +16,8 @@ import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { TransaccionCanceladaComponent } from './transaccion-cancelada/transaccion-cancelada.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { TransaccionCanceladaComponent } from './transaccion-cancelada/transacci
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
