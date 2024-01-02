@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ClienteService } from "../services/cliente.service";
-import { Router } from "@angular/router";
+import { Cliente } from "../model/Cliente";
 
 @Component({
   selector: "app-clientes",
@@ -9,20 +9,24 @@ import { Router } from "@angular/router";
 })
 export class ClientesComponent {
   clientes: any[] = [];
-  cliente: any = {};
-  tipoIdentificacion: String = '';
-  numeroIdentificacion: String = '';
+  cliente: Cliente = {} as Cliente;
 
-  constructor(private clienteService: ClienteService, private router: Router) {}
+  constructor(private clienteService: ClienteService) {}
 
   ngOnInit(): void {
+    this.cliente.tipoIdentificacion = "CED";
+    this.cliente.numeroIdentificacion = "";
     this.listAll();
   }
 
   listAll() {
     this.clienteService.listAll().subscribe(
-      (data) => {
-        this.clientes = data;
+      (data) => {        
+        this.clientes = data.map(cliente => ({
+          ...cliente,
+          identificacionNombre: this.tipoIdentificacionNombre(cliente.tipoIdentificacion),
+          tipoNombre: this.tipoClienteNombre(cliente.tipoCliente)
+        }));
       },
       (error) => {
         console.error(error);
@@ -31,13 +35,55 @@ export class ClientesComponent {
   }
 
   findByIdentificacion() {
-    this.clienteService.findByIdentificacion(this.tipoIdentificacion, this.numeroIdentificacion).subscribe(
-      (data) => {
-        this.clientes = [data];
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    if (this.cliente.numeroIdentificacion.length > 0) {
+      this.clienteService
+        .findByIdentificacion(
+          this.cliente.tipoIdentificacion,
+          this.cliente.numeroIdentificacion
+        )
+        .subscribe(
+          (data) => {
+            if (data) {
+              this.clientes = [data].map(cliente => ({
+                ...cliente,
+                identificacionNombre: this.tipoIdentificacionNombre(cliente.tipoIdentificacion),
+                tipoNombre: this.tipoClienteNombre(cliente.tipoCliente)
+              }));
+            } else {
+              console.log("Cliente no encontrado");
+            }
+          },
+          (error) => {
+            console.error(error);
+            console.log("Error al buscar");
+          }
+        );
+    } else {
+      console.error("Numero de identificacion vacío");
+    }
+  }
+
+  tipoIdentificacionNombre(tipoIdentificacion: String): String {
+    switch (tipoIdentificacion) {
+      case 'CED':
+        return 'Cédula';
+      case 'PAS':
+        return 'Pasaporte';
+      case 'RUC':
+        return 'RUC';
+      default:
+        return 'Desconocido';
+    }
+  }
+
+  tipoClienteNombre(tipoCliente: String): String {
+    switch (tipoCliente) {
+      case 'NAT':
+        return 'Natural';
+      case 'JUR':
+        return 'Jurídico';      
+      default:
+        return 'Desconocido';
+    }
   }
 }

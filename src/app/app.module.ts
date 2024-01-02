@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 /************************* COMPONENTS ************************************** */
 import { OpcionesComponent } from './opciones/opciones.component';
 import { LoginBoComponent } from './login-bo/login-bo.component';
-import { ClienteJuridicoComponent } from './cliente-juridico/cliente-juridico.component';
-import { ClienteNaturalComponent } from './cliente-natural/cliente-natural.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { CuentasComponent } from './cuentas/cuentas.component';
 import { CreditosComponent } from './creditos/creditos.component';
@@ -17,15 +15,15 @@ import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { TransaccionCanceladaComponent } from './transaccion-cancelada/transaccion-cancelada.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NuevoClienteComponent } from './nuevo-cliente/nuevo-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpcionesComponent,
     LoginBoComponent,
-    ClienteJuridicoComponent,
-    ClienteNaturalComponent,
+    NuevoClienteComponent,
     CreditosComponent,
     ClientesComponent,
     CuentasComponent,
@@ -39,7 +37,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

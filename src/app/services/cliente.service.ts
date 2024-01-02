@@ -12,7 +12,7 @@ export class ClienteService {
     return this.http.get<any[]>(`${this.apiUrl}/listar`);
   }
 
-  findById(id: number) {
+  findById(id: Number) {
     return this.http.get<any>(`${this.apiUrl}/buscar/${id}`);
   }
 
@@ -21,6 +21,10 @@ export class ClienteService {
   }
 
   //PERSONA
+  listPersona() {
+    return this.http.get<any>(`${this.apiUrl}/persona/listar`);
+  }
+
   savePersona(persona: any) {
     return this.http.post<any>(`${this.apiUrl}/persona/crear`, persona);
   }
@@ -31,5 +35,19 @@ export class ClienteService {
   
   deletePersona(id: number) {
     return this.http.put<any>(`${this.apiUrl}/persona/eliminar/${id}`, id);
+  }
+
+  //EMPRESA
+  saveEmpresa(empresa: any) {
+    return this.http.post<any>(`${this.apiUrl}/empresa/crear`, empresa);
+  }
+
+  addPersonasEmpresa(personas: any[]) {
+    return this.http.post<any>(`${this.apiUrl}/empresa/persona/agregar`, personas);
+  }
+
+  //TIPO RELACION
+  listTipoRelacion() {
+    return this.http.get<any>(`${this.apiUrl}/relacion/listar`);
   }
 }

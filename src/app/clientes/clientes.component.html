@@ -31,17 +31,17 @@
     <div class="columna-gris">
       <div class="buttons-container">
         <h3>Gestionar Clientes</h3>
-        <div class="circle-button-mas">
-          <img src="../../assets/img/bo/añadir.png" alt="Icono 1" />
+        <div class="circle-button-mas" title="Nuevo" routerLink="/nuevoCliente">
+          <img src="../../assets/img/bo/añadir.png" alt="Nuevo" />
         </div>
-        <div class="circle-button-rec" (click)="listAll()">
-          <img src="../../assets/img/bo/recargar.png" alt="Icono 2" />
+        <div class="circle-button-rec" (click)="listAll()" title="Refrescar">
+          <img src="../../assets/img/bo/recargar.png" alt="Refrescar" />
         </div>
-        <div class="circle-button-edi">
-          <img src="../../assets/img/bo/editar.png" alt="Icono 3" />
+        <div class="circle-button-edi" title="Editar">
+          <img src="../../assets/img/bo/editar.png" alt="Editar" />
         </div>
-        <div class="circle-button-eli">
-          <img src="../../assets/img/bo/eliminar.png" alt="Icono 4" />
+        <div class="circle-button-eli" title="Eliminar">
+          <img src="../../assets/img/bo/eliminar.png" alt="Eliminar" />
         </div>
       </div>
       <hr />
@@ -51,17 +51,17 @@
           <label for="tipo-identificacion" class="filter-label"
             >Tipo de Identificación:</label
           >
-          <select id="tipo-identificacion" [(ngModel)]="tipoIdentificacion">
+          <select id="tipo-identificacion" [(ngModel)]="cliente.tipoIdentificacion">
             <option value="CED">Cédula</option>
             <option value="PAS">Pasaporte</option>
             <option value="RUC">RUC</option>
           </select>
           
           <label for="num-identificacion" class="filter-label">N° de Identificación:</label>
-          <input type="text" id="num-identificacion" [(ngModel)]="numeroIdentificacion" placeholder=" Buscar.." />
+          <input type="text" id="num-identificacion" [(ngModel)]="cliente.numeroIdentificacion" placeholder=" Buscar.." required />
           
           <div class="circle-button-buscar" (click)="findByIdentificacion()">
-            <img src="../../assets/img/bo/lupa.png" alt="Icono 1" />
+            <img src="../../assets/img/bo/lupa.png" alt="Buscar" />
           </div>
         </div>
 
@@ -72,7 +72,8 @@
                 <th>N°</th>
                 <th>Tipo Identificación</th>
                 <th>N° Identificación</th>
-                <th>Razón Social</th>
+                <th>Tipo Cliente</th>
+                <th>Nombre</th>
                 <th>Correo Electronico</th>
                 <th>Teléfono</th>
                 <th></th>
@@ -81,15 +82,23 @@
             <tbody>
               <tr *ngFor="let cliente of clientes">
                 <td>{{ cliente.codigo }}</td>
-                <td>{{ cliente.tipoIdentificacion }}</td>
+                <td>{{ cliente.identificacionNombre }}</td>
                 <td>{{ cliente.numeroIdentificacion }}</td>
-                <td>{{ cliente.razonSocial }}</td>
+                <td>{{ cliente.tipoNombre }}</td>
+                <td>                  
+                  <ng-container *ngIf="cliente.tipoCliente === 'NAT'; else juridico">
+                    {{ cliente.nombres + ' ' + cliente.apellidos }}
+                  </ng-container>
+                  <ng-template #juridico>
+                    {{ cliente.razonSocial }}
+                  </ng-template>
+                </td>
                 <td>{{ cliente.correoElectronico }}</td>
                 <td>{{ cliente.telefono }}</td>
-                <td>
+                <td [width]="100">
                   <div class="button" routerLink="/cuentas">Cuentas</div>
                 </td>
-              </tr>              
+              </tr>             
             </tbody>
           </table>
         </div>

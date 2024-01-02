@@ -1,0 +1,422 @@
+<div class="primer-grid">
+  <div class="header">
+    <div class="logo">
+      <img src="../../../assets/img/logo sin letras.png" alt="Usuario" />
+    </div>
+    <div class="nombre">
+      <p>Banco BanQuito</p>
+    </div>
+    <div class="usuario-info">
+      <p>Nombre de Usuario</p>
+      <img src="../../../assets/img/Img persona.png" alt="Usuario" />
+    </div>
+  </div>
+  <form (ngSubmit)="save()">
+    <div class="columna-gris">
+      <div class="buttons-container">
+        <h3>Registrar</h3>
+        <div class="button-container">
+          <button type="submit" class="button">Guardar</button>
+          <div class="button" routerLink="/clientes">Cancelar</div>
+        </div>
+      </div>
+      <div
+        class="filter-section"
+        style="padding-bottom: 20px; margin-top: 15px"
+      >
+        <label
+          for="nombre"
+          class="filter-label"
+          style="text-align: left; width: 155px"
+          >Tipo de cliente:</label
+        >
+        <select
+          id="tipo-identificacion"
+          name="tipoCliente"
+          [(ngModel)]="cliente.tipoCliente"
+        >
+          <option value="NAT">Natural</option>
+          <option value="JUR">Jurídico</option>
+        </select>
+        <br />
+      </div>
+      <tr class="datos-personales">
+        <td>Datos Personales</td>
+      </tr>
+      <td>
+        <div></div>
+        <div class="filter-section">
+          <label for="nombre" class="filter-label"
+            >Tipo de identificación:</label
+          >
+          <select
+            id="tipo-identificacion"
+            style="margin-bottom: 5px"
+            name="tipoIdentificacion"
+            [(ngModel)]="cliente.tipoIdentificacion"
+          >
+            <option value="" disabled selected>Seleccionar...</option>
+            <option *ngIf="cliente.tipoCliente === 'NAT'" value="CED">
+              Cédula
+            </option>
+            <option *ngIf="cliente.tipoCliente === 'NAT'" value="PAS">
+              Pasaporte
+            </option>
+            <option *ngIf="cliente.tipoCliente === 'JUR'" value="RUC">
+              RUC
+            </option>
+          </select>
+          <br />
+          <tbody>
+            <tr>
+              <td>
+                <label for="nombre" class="filter-label"
+                  >N° de Identificación:</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="num-identificacion"
+                  name="numeroIdentificacion"
+                  [(ngModel)]="cliente.numeroIdentificacion"
+                  [ngClass]="{
+                    'campo-invalido':
+                      numIdentificacion.invalid && numIdentificacion.touched
+                  }"
+                  required
+                  #numIdentificacion="ngModel"
+                />
+                <div
+                  *ngIf="
+                    numIdentificacion.invalid &&
+                    (numIdentificacion.dirty || numIdentificacion.touched)
+                  "
+                >
+                  <p style="color: red">Campo requerido</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td *ngIf="cliente.tipoCliente === 'NAT'">
+                <label for="nombre" class="filter-label">Apellidos:</label>
+              </td>
+              <td *ngIf="cliente.tipoCliente === 'NAT'">
+                <input
+                  type="text"
+                  id="apellidos"
+                  name="apellidos"
+                  [(ngModel)]="cliente.apellidos"
+                  [ngClass]="{
+                    'campo-invalido': apellidos.invalid && apellidos.touched
+                  }"
+                  required
+                  #apellidos="ngModel"
+                />
+                <div
+                  *ngIf="
+                    apellidos.invalid && (apellidos.dirty || apellidos.touched)
+                  "
+                >
+                  <p style="color: red">Campo requerido</p>
+                </div>
+              </td>
+              <td *ngIf="cliente.tipoCliente === 'JUR'">
+                <label for="nombre" class="filter-label">Razón Social:</label>
+              </td>
+              <td *ngIf="cliente.tipoCliente === 'JUR'">
+                <input
+                  type="text"
+                  id="razonSocial"
+                  name="razonSocial"
+                  [(ngModel)]="cliente.razonSocial"
+                  [ngClass]="{
+                    'campo-invalido': razonSocial.invalid && razonSocial.touched
+                  }"
+                  required
+                  #razonSocial="ngModel"
+                />
+                <div
+                  *ngIf="
+                    razonSocial.invalid &&
+                    (razonSocial.dirty || razonSocial.touched)
+                  "
+                >
+                  <p style="color: red">Campo requerido</p>
+                </div>
+              </td>
+              <td *ngIf="cliente.tipoCliente === 'NAT'">
+                <label for="nombre" class="filter-label">Nombres:</label>
+                <input
+                  type="text"
+                  id="nombres"
+                  name="nombres"
+                  [(ngModel)]="cliente.nombres"
+                  [ngClass]="{
+                    'campo-invalido': nombres.invalid && nombres.touched
+                  }"
+                  required
+                  #nombres="ngModel"
+                />
+                <div
+                  style="text-align: center"
+                  *ngIf="nombres.invalid && (nombres.dirty || nombres.touched)"
+                >
+                  <p style="color: red">Campo requerido</p>
+                </div>
+              </td>
+              <td *ngIf="cliente.tipoCliente === 'JUR'">
+                <label for="nombre" class="filter-label"
+                  >Nombre Comercial:</label
+                >
+                <input
+                  type="text"
+                  id="nombreComercial"
+                  name="nombreComercial"
+                  [(ngModel)]="cliente.nombreComercial"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td *ngIf="cliente.tipoCliente === 'NAT'">
+                <label for="fechaNacimiento" class="filter-label"
+                  >Fecha de nacimiento:</label
+                >
+              </td>
+              <td *ngIf="cliente.tipoCliente === 'NAT'">
+                <input
+                  type="date"
+                  id="fechaNacimiento"
+                  name="fechaNacimiento"
+                  [(ngModel)]="cliente.fechaNacimiento"
+                />
+              </td>
+              <td *ngIf="cliente.tipoCliente === 'JUR'">
+                <label for="fechaConstitucion" class="filter-label"
+                  >Fecha de Constitución:</label
+                >
+              </td>
+              <td *ngIf="cliente.tipoCliente === 'JUR'">
+                <input
+                  type="date"
+                  id="fechaConstitucion"
+                  name="fechaConstitucion"
+                  [(ngModel)]="cliente.fechaConstitucion"
+                  [ngClass]="{
+                    'campo-invalido':
+                      fechaConstitucion.invalid && fechaConstitucion.touched
+                  }"
+                  required
+                  #fechaConstitucion="ngModel"
+                />
+                <div
+                  *ngIf="
+                    fechaConstitucion.invalid &&
+                    (fechaConstitucion.dirty || fechaConstitucion.touched)
+                  "
+                >
+                  <p style="color: red">Campo requerido</p>
+                </div>
+              </td>
+              <td>
+                <label for="nombre" class="filter-label">Telefono:</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  name="telefono"
+                  [(ngModel)]="cliente.telefono"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="nombre" class="filter-label"
+                  >Correo Electrónico:</label
+                >
+              </td>
+              <td>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correoElectronico"
+                  [(ngModel)]="cliente.correoElectronico"
+                  [ngClass]="{
+                    'campo-invalido': correo.invalid && correo.touched
+                  }"
+                  required
+                  #correo="ngModel"
+                />
+                <div *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                  <p style="color: red">Campo requerido</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="nombre" class="filter-label-direc"
+                  >Dirección:</label
+                >
+              </td>
+              <td colspan="3">
+                <input
+                  style="width: 100%"
+                  type="text"
+                  class="filterdirec"
+                  id="direccion"
+                  name="direccion"
+                  [(ngModel)]="cliente.direccion"
+                />
+              </td>
+            </tr>
+          </tbody>
+          <div *ngIf="cliente.tipoCliente === 'JUR'">
+            <button
+              type="button"
+              class="button"
+              title="Personas asociadas"
+              (click)="openModal(modalContent)"
+            >
+              Personas
+            </button>
+          </div>
+        </div>
+      </td>
+    </div>
+  </form>
+</div>
+<footer>© 2023 BancoBanquito. Todos los derechos reservados.</footer>
+
+<ng-template #modalContent let-modal>
+  <div
+    class="modal-header"
+    style="background: linear-gradient(to top, #18948a, #1f847b); color: #fff"
+  >
+    <h4 class="modal-title">Personas asociadas</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <table border="0">
+        <div *ngFor="let persona of personas; let i = index">
+          <tr>
+            <td>
+              <label for="nombre">Nombre:</label>
+            </td>
+            <td>
+              <select
+                class="select-modal"
+                id="codPersona"
+                style="margin-bottom: 5px; width: auto"
+                name="codPersona"
+                [(ngModel)]="persona.codPersona"
+                (change)="findById(persona.codPersona, i)"
+              >
+                <option value="0" disabled selected>Seleccionar...</option>
+                <option
+                  *ngFor="let cliente of clientes"
+                  [value]="cliente.codigo"
+                >
+                  {{ cliente.nombres + " " + cliente.apellidos }}
+                </option>
+              </select>
+            </td>
+            <td>
+              <label for="num-identificacion">N° de Identificación:</label>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="num-identificacion"
+                class="input-modal"
+                name="numeroIdentificacion"
+                [value]="personasIdentificacion[i]?.numeroIdentificacion || ''"
+                disabled
+              />
+            </td>
+            <td>
+              <label for="relacion">Relación:</label>
+            </td>
+            <td>
+              <select
+                id="relacion"
+                class="select-modal"
+                style="margin-bottom: 5px; width: auto"
+                name="relacion"
+                [(ngModel)]="persona.codRelacion"
+              >
+                <option value="" disabled selected>Seleccionar...</option>
+                <option
+                  *ngFor="let relacion of relaciones"
+                  [value]="relacion.codigo"
+                >
+                  {{ relacion.nombre }}
+                </option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="fechaInicio">Fecha de Inicio:</label>
+            </td>
+            <td>
+              <input
+                type="date"
+                class="input-modal"
+                id="fechaInicio"
+                name="fechaInicio"
+                [(ngModel)]="persona.fechaInicio"
+              />
+            </td>
+            <td>
+              <label for="fechaFin">Fecha de Fin:</label>
+            </td>
+            <td>
+              <input
+                type="date"
+                class="input-modal"
+                id="fechaFin"
+                name="fechaFin"
+                [(ngModel)]="persona.fechaFin"
+              />
+            </td>
+            <td>
+              <button
+                *ngIf="i !== 0"
+                type="button"
+                class="button-delete"
+                (click)="quitarPersona(i)"
+              >
+                X
+              </button>
+            </td>
+          </tr>
+          <hr />
+        </div>
+      </table>
+      <button
+        type="button"
+        class="button-add"
+        title="Personas asociadas"
+        (click)="addPersona()"
+      >
+        +
+      </button>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="modal.close('Close click'); savePersonas()"
+    >
+      Aceptar
+    </button>
+  </div>
+</ng-template>

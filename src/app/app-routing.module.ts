@@ -6,21 +6,19 @@ import { RouterModule, Routes, RoutesRecognized } from '@angular/router';
 import { OpcionesComponent } from './opciones/opciones.component';
 import { LoginBoComponent } from './login-bo/login-bo.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
-import { ClienteJuridicoComponent } from './cliente-juridico/cliente-juridico.component';
-import { ClienteNaturalComponent } from './cliente-natural/cliente-natural.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { CreditosComponent } from './creditos/creditos.component';
 import { CuentasComponent } from './cuentas/cuentas.component';
 import { NuevaCuentaComponent } from './nueva-cuenta/nueva-cuenta.component';
 import { NuevoCreditoComponent } from './nuevo-credito/nuevo-credito.component';
 import { TransaccionCanceladaComponent } from './transaccion-cancelada/transaccion-cancelada.component';
+import { NuevoClienteComponent } from './nuevo-cliente/nuevo-cliente.component';
 
 const routes: Routes = [
   
   { path: '', component: OpcionesComponent},
   { path: 'loginBO', component: LoginBoComponent},
-  { path: 'clienteJuridico', component: ClienteJuridicoComponent},
-  { path: 'clienteNatural', component: ClienteNaturalComponent},
+  { path: 'nuevoCliente', component: NuevoClienteComponent},
   { path: 'clientes', component: ClientesComponent},
   { path: 'cuentas', component: CuentasComponent},
   { path: 'nuevaCuenta', component: NuevaCuentaComponent},
