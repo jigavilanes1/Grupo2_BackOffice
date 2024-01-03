@@ -14,7 +14,7 @@
   <form (ngSubmit)="save()">
     <div class="columna-gris">
       <div class="buttons-container">
-        <h3>Registrar</h3>
+        <h3>Cliente</h3>
         <div class="button-container">
           <button type="submit" class="button">Guardar</button>
           <div class="button" routerLink="/clientes">Cancelar</div>
@@ -28,7 +28,7 @@
           for="nombre"
           class="filter-label"
           style="text-align: left; width: 155px"
-          >Tipo de cliente:</label
+          >Tipo de cliente: *</label
         >
         <select
           id="tipo-identificacion"
@@ -47,13 +47,19 @@
         <div></div>
         <div class="filter-section">
           <label for="nombre" class="filter-label"
-            >Tipo de identificación:</label
+            >Tipo de identificación: *</label
           >
           <select
             id="tipo-identificacion"
             style="margin-bottom: 5px"
             name="tipoIdentificacion"
             [(ngModel)]="cliente.tipoIdentificacion"
+            [ngClass]="{
+              'campo-invalido':
+                tipoIdentificacion.invalid && tipoIdentificacion.touched
+            }"
+            required
+            #tipoIdentificacion="ngModel"
           >
             <option value="" disabled selected>Seleccionar...</option>
             <option *ngIf="cliente.tipoCliente === 'NAT'" value="CED">
@@ -71,7 +77,7 @@
             <tr>
               <td>
                 <label for="nombre" class="filter-label"
-                  >N° de Identificación:</label
+                  >N° de Identificación: *</label
                 >
               </td>
               <td>
@@ -99,7 +105,7 @@
             </tr>
             <tr>
               <td *ngIf="cliente.tipoCliente === 'NAT'">
-                <label for="nombre" class="filter-label">Apellidos:</label>
+                <label for="nombre" class="filter-label">Apellidos: *</label>
               </td>
               <td *ngIf="cliente.tipoCliente === 'NAT'">
                 <input
@@ -122,7 +128,7 @@
                 </div>
               </td>
               <td *ngIf="cliente.tipoCliente === 'JUR'">
-                <label for="nombre" class="filter-label">Razón Social:</label>
+                <label for="nombre" class="filter-label">Razón Social: *</label>
               </td>
               <td *ngIf="cliente.tipoCliente === 'JUR'">
                 <input
@@ -146,7 +152,7 @@
                 </div>
               </td>
               <td *ngIf="cliente.tipoCliente === 'NAT'">
-                <label for="nombre" class="filter-label">Nombres:</label>
+                <label for="nombre" class="filter-label">Nombres: *</label>
                 <input
                   type="text"
                   id="nombres"
@@ -193,7 +199,7 @@
               </td>
               <td *ngIf="cliente.tipoCliente === 'JUR'">
                 <label for="fechaConstitucion" class="filter-label"
-                  >Fecha de Constitución:</label
+                  >Fecha de Constitución: *</label
                 >
               </td>
               <td *ngIf="cliente.tipoCliente === 'JUR'">
@@ -231,7 +237,7 @@
             <tr>
               <td>
                 <label for="nombre" class="filter-label"
-                  >Correo Electrónico:</label
+                  >Correo Electrónico: *</label
                 >
               </td>
               <td>
@@ -315,8 +321,8 @@
                 id="codPersona"
                 style="margin-bottom: 5px; width: auto"
                 name="codPersona"
-                [(ngModel)]="persona.codPersona"
-                (change)="findById(persona.codPersona, i)"
+                [(ngModel)]="persona.codigoPersona"
+                (change)="findById(persona.codigoPersona, i)"
               >
                 <option value="0" disabled selected>Seleccionar...</option>
                 <option
@@ -349,7 +355,7 @@
                 class="select-modal"
                 style="margin-bottom: 5px; width: auto"
                 name="relacion"
-                [(ngModel)]="persona.codRelacion"
+                [(ngModel)]="persona.codigoRelacion"
               >
                 <option value="" disabled selected>Seleccionar...</option>
                 <option
@@ -385,6 +391,26 @@
                 name="fechaFin"
                 [(ngModel)]="persona.fechaFin"
               />
+            </td>
+            <td>
+              <label for="estado">Estado:</label>
+            </td>
+            <td>
+              <select
+                id="estado"
+                class="select-modal"
+                style="margin-bottom: 5px; width: auto"
+                name="estado"
+                [(ngModel)]="persona.estado"
+              >
+              <option value="" disabled selected>Seleccionar...</option>
+              <option value="ACT">
+                Activo
+              </option>
+              <option value="INA">
+                Inactivo
+              </option>
+              </select>
             </td>
             <td>
               <button

@@ -287,6 +287,9 @@ hr {
 
 .table-container {
   overflow-x: auto;
+  overflow: scroll;
+  height: 350px;
+  width: auto;
 }
 
 table {
@@ -350,4 +353,9 @@ footer {
   bottom: 0;
   width: 100%;
   font-size: 15px;
+}
+
+.selected-row {
+  background-color: #cce5ff;
+  color: #004085;
 }

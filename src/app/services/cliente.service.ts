@@ -33,7 +33,7 @@ export class ClienteService {
     return this.http.put<any>(`${this.apiUrl}/persona/actualizar`, persona);
   }
   
-  deletePersona(id: number) {
+  deletePersona(id: Number) {
     return this.http.put<any>(`${this.apiUrl}/persona/eliminar/${id}`, id);
   }
 
@@ -44,6 +44,22 @@ export class ClienteService {
 
   addPersonasEmpresa(personas: any[]) {
     return this.http.post<any>(`${this.apiUrl}/empresa/persona/agregar`, personas);
+  }
+
+  findByCodigoEmpresa(id: Number) {
+    return this.http.get<any>(`${this.apiUrl}/empresa/persona/listar/${id}`);
+  }
+
+  updatePersonaEmpresa(personas: any[]) {
+    return this.http.post<any>(`${this.apiUrl}/empresa/persona/actualizar`, personas);
+  }
+
+  updateEmpresa(empresa: any) {
+    return this.http.put<any>(`${this.apiUrl}/empresa/actualizar`, empresa);
+  }
+
+  deleteEmpresa(id: Number) {
+    return this.http.put<any>(`${this.apiUrl}/empresa/eliminar/${id}`, id);
   }
 
   //TIPO RELACION

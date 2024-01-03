@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: '', component: OpcionesComponent},
   { path: 'loginBO', component: LoginBoComponent},
   { path: 'nuevoCliente', component: NuevoClienteComponent},
+  { path: 'editarCliente/:codigo', component: NuevoClienteComponent},
   { path: 'clientes', component: ClientesComponent},
   { path: 'cuentas', component: CuentasComponent},
   { path: 'nuevaCuenta', component: NuevaCuentaComponent},

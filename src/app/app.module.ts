@@ -17,6 +17,9 @@ import { TransaccionCanceladaComponent } from './transaccion-cancelada/transacci
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NuevoClienteComponent } from './nuevo-cliente/nuevo-cliente.component';
+import { SuccessModalContentComponent } from './success-modal-content/success-modal-content.component';
+import { ErrorModalContentComponent } from './error-modal-content/error-modal-content.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,14 +33,17 @@ import { NuevoClienteComponent } from './nuevo-cliente/nuevo-cliente.component';
     NuevaCuentaComponent,
     NuevoCreditoComponent,
     RegistrarseComponent,
-    TransaccionCanceladaComponent
+    TransaccionCanceladaComponent,
+    SuccessModalContentComponent,
+    ErrorModalContentComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,    
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
