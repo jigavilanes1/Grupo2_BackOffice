@@ -16,7 +16,7 @@ import { NuevoClienteComponent } from './nuevo-cliente/nuevo-cliente.component';
 
 const routes: Routes = [
   
-  { path: '', component: OpcionesComponent},
+  { path: '', component: LoginBoComponent},
   { path: 'loginBO', component: LoginBoComponent},
   { path: 'nuevoCliente', component: NuevoClienteComponent},
   { path: 'editarCliente/:codigo', component: NuevoClienteComponent},
